@@ -2,19 +2,27 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>IActionResult</Title>
+      <Title>Create Task IActionResult</Title>
       <Author>Rodrigo L. Oliveira</Author>
-      <Shortcut>iar</Shortcut>
+      <Description>Atalho para criação de uma action assíncrona em ASP.NET CORE.</Description>
+      <Shortcut>pata</Shortcut>
     </Header>
     <Snippet>
       <Code Language="CSharp">
         <![CDATA[
-        public async Task<IActionResult> Action()
+        public async Task<IActionResult> $NameAction$()
         {
           return View();
         }
         ]]>
       </Code>
+      <Declarations>
+        <Literal>
+          <ID>NameAction</ID>
+          <Default>Action</Default>
+          <ToolTip>Nome que deseja dar a sua nova action.</ToolTip>
+        </Literal>
+      </Declarations>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
