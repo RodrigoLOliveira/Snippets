@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Create Task IViewComponent</Title>
+      <Author>Rodrigo L. Oliveira</Author>
+      <Description>Atalho para criação de um Component assíncrono em ASP.NET CORE.</Description>
+      <Shortcut>pata</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+            public class $ComponentName$ViewComponent : ViewComponent
+            {
+                public async Taks<IViewComponentResult> InvokeAsync()
+                {
+                    return View();
+                }
+            }
+        ]]>
+      </Code>
+      <Declarations>
+        <Literal>
+          <ID>ComponentName</ID>
+          <Default>Component</Default>
+          <ToolTip>Template para criação de um novo View Component.</ToolTip>
+        </Literal>
+      </Declarations>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
