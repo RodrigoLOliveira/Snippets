@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Criação de Middleware Customizados</Title>
+      <Author>Rodrigo L. Oliveira</Author>
+      <Description>Atalho para criação de uma Middleware e sua extensão a IApplicationBuilder.</Description>
+      <Shortcut>mid</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+        public class $Name$Middleware
+        {
+          private readonly RequestDelegate _next;
+          
+          public $Name$Middleware(RequestDelegate next)
+          {
+            _next = next;
+          }
+          
+          public async Task InvokeAsync(HttpContext context)
+          {
+            await _next(context);
+          }
+        }
+        
+        public static class $Name$MiddlewareExtension
+        {
+          public static IApplicationBuilder Use$Name$Middleware(this IApplicationBuilder builder)
+          {
+            return builder.UseMiddleware<$Name$Middleware>();
+          }
+        }
+        ]]>
+      </Code>
+      <Declarations>
+        <Literal>
+          <ID>Name</ID>
+          <Default>My</Default>
+          <ToolTip>Nome do middleware que deseja criar.</ToolTip>
+        </Literal>
+      </Declarations>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
